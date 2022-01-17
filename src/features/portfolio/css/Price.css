@@ -1,0 +1,180 @@
+.container{
+    font-family: consolas;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 40px 0;
+    justify-items: center;
+    grid-auto-rows: minmax(100px, auto);
+}
+.container .box{
+    position: relative;
+    width: 320px;
+    height: 400px;
+    margin: 40px 30px;
+    transition: 0.5s;
+}
+.container .box::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+    filter: blur();
+}
+.container .box::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+    filter: blur(30px);
+    transition: 0.5s;
+}
+.container .box:hover:before,
+.container .box:hover:after{
+    transform: skewX(0deg);
+    left: 20px;
+    width: calc(100% - 90px);
+}
+.container .box:nth-child(1):before,
+.container .box:nth-child(1):after{
+   
+    background-image: linear-gradient(315deg, #000000 0%, #04619f 74%);
+}
+.container .box:nth-child(2):before,
+.container .box:nth-child(2):after{
+
+    background-image: linear-gradient(315deg, #000000 0%, #166d3b 74%);
+}
+.container .box:nth-child(3):before,
+.container .box:nth-child(3):after{
+  
+    background-image: linear-gradient(315deg, #000000 0%, #b82e1f 74%);
+}
+.container .box span{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    pointer-events: none;
+}
+.container .box span:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    background: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: 0.5s;
+    animation: animateSpan 2s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0, 0.5);
+}
+.container .box:hover span::before{
+    top: -50px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+}
+.container .box span::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    background: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: 0.5s;
+    animation: animateSpan 2s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0, 0.5);
+    animation-delay: -1s
+}
+.container .box:hover span::after{
+    bottom: -50px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+}
+@keyframes animateSpan{
+    0%,100%{
+        transform: translateY(10px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+}
+.container .box .content{
+    position: relative;
+    left: 0;
+    margin-top: 25px;
+    padding: 20px 40px;
+    background: rgb(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0, 0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    transform: 0.5s;
+    margin-top: 60px;
+}
+.container .box:hover .content{
+    left: -25px;
+    padding: 60px 40px;
+}
+.container .box .content p{
+    color:#fff;
+   font-size: 1.1em;
+   margin-bottom: 10px;
+   line-height: 1.4em;
+}
+.container .box .content .CardH2{
+    color:#fff;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+.container .box .content a{
+
+    display: inline-block;
+    font-size: 1.1em;
+    color:#111;
+    background:#fff;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    
+}
+@media screen and (max-width: 1121px) {
+    .container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media screen and (max-width: 806px) {
+    .container{
+        height: 2100;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

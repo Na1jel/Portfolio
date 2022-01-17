@@ -1,0 +1,107 @@
+.wraper{
+    font-family: consolas;
+    background-color: black;
+}
+.form{
+    max-width: 550px;
+    margin: 0 auto;
+    color: blanchedalmond;
+    padding: 30px 0;
+}
+.formTitle{
+    font-size: 40px;
+}
+.formItem{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 15px;
+}
+.formLabel{
+    margin: 0px 0px 10px 0px;
+    font-size: 17px;
+}
+.formInput{
+    width: 100%;
+    border-radius: 5px;
+    padding: 19px;
+}
+textarea.formInput{
+    min-height: 120px;
+}
+.fileItem{
+    position: relative;
+}
+.fileInput{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    font-size: 0;
+    cursor: pointer;
+}
+.fileButton{
+    display: inline-flex;
+    min-height: 40px;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding: 0px 20px;
+}
+.formButton{
+    width: 100%;
+    border-radius: 30px;
+    padding: 19px 0px;
+    font-size: 17px;
+    background-color: rgb(194, 240, 194);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 624px) {
+    .form{
+        width: 430px;
+    }
+    textarea.formInput{
+        max-width: 330px;
+        min-height: 20px;
+    }
+}
+@media screen and (max-width: 489px) {
+    .form{
+        width: 330px;
+    }
+    textarea.formInput{
+        max-width: 330px;
+        min-height: 20px;
+        max-height: 80px;
+    }
+}
+@media screen and (max-width: 448px) {
+    .form{
+        width: 330px;
+    }
+    .formTitle{
+        font-size: 30px;
+    }
+    textarea.formInput{
+        max-width: 130px;
+        min-height: 20px;
+        max-height: 50px;
+    }
+}
+@media screen and (max-width: 391px) {
+    .form{
+        width: 230px;
+    }
+    .formTitle{
+        font-size: 25px;
+    }
+    textarea.formInput{
+        max-width: 130px;
+        min-height: 20px;
+        max-height: 50px;
+    }
+}
